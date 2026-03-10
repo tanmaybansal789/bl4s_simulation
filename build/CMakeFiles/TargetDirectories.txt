@@ -1,0 +1,3 @@
+/Users/puru/Desktop/school/bl4s/bl4s_simulation/build/CMakeFiles/bl4s_sim.dir
+/Users/puru/Desktop/school/bl4s/bl4s_simulation/build/CMakeFiles/edit_cache.dir
+/Users/puru/Desktop/school/bl4s/bl4s_simulation/build/CMakeFiles/rebuild_cache.dir

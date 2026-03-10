@@ -1,0 +1,37 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# vis.mac  –  Visualisation setup loaded at startup in interactive mode.
+#
+# This macro is executed automatically when you run ./bl4s_sim with no args.
+# Edit it to change the default view, colours, or camera position.
+# ─────────────────────────────────────────────────────────────────────────────
+
+# ── 1. Initialise the run manager first (geometry must exist before drawing) ──
+/run/initialize
+
+# ── 2. Open the Qt window ────────────────────────────────────────────────────
+# TSG uses Qt's scene graph with GLES, routed through Apple Metal on M-series
+# Macs.  The legacy OGL (OpenGL immediate-mode) driver is deprecated on macOS
+# and crashes on Apple Silicon.
+/vis/open TSG 800x600-0+0
+
+# ── 3. Draw the geometry ──────────────────────────────────────────────────────
+/vis/drawVolume
+
+# ── 4. Camera & scene setup ───────────────────────────────────────────────────
+# Slightly oblique angle so the 3-D layout is visible.
+/vis/viewer/set/viewpointThetaPhi 70 20
+/vis/viewer/zoom 1.5
+
+# Show coordinate axes (length 50 cm, at the origin).
+/vis/scene/add/axes 0 0 0 50 cm
+
+# ── 5. Trajectory display ─────────────────────────────────────────────────────
+# Keep up to 10 events worth of tracks in the window at once.
+/vis/scene/add/trajectories smooth
+/vis/scene/endOfEventAction accumulate 10
+
+/vis/viewer/set/autoRefresh true
+/vis/verbose warnings
+
+# ── 6. Fire a few seed events so tracks are visible on startup ────────────────
+/run/beamOn 5
