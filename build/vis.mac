@@ -12,23 +12,27 @@
 # TSG uses Qt's scene graph with GLES, routed through Apple Metal on M-series
 # Macs.  The legacy OGL (OpenGL immediate-mode) driver is deprecated on macOS
 # and crashes on Apple Silicon.
-/vis/open TSG 800x600-0+0
+/vis/open TSG 900x600-0+0
 
 # ── 3. Draw the geometry ──────────────────────────────────────────────────────
 /vis/drawVolume
 
 # ── 4. Camera & scene setup ───────────────────────────────────────────────────
-# Slightly oblique angle so the 3-D layout is visible.
-/vis/viewer/set/viewpointThetaPhi 70 20
-/vis/viewer/zoom 1.5
+# Compact geometry: world is 40×40×30 cm.  Centre on the stopper at origin
+# and zoom in to see the full calorimeter array and beam line.
+/vis/viewer/set/viewpointThetaPhi 80 20
+/vis/viewer/set/targetPoint 0 0 0 cm
+/vis/viewer/zoom 3.0
 
-# Show coordinate axes (length 50 cm, at the origin).
-/vis/scene/add/axes 0 0 0 50 cm
+# Show coordinate axes (length 30 cm, at the stopper/origin).
+/vis/scene/add/axes 0 0 0 30 cm
 
 # ── 5. Trajectory display ─────────────────────────────────────────────────────
-# Keep up to 10 events worth of tracks in the window at once.
+# Accumulate up to 5 events worth of tracks at once.
+# mu+ tracks will appear entering from the left; e+ tracks spiral outward
+# from the stopper when the B field curves them.
 /vis/scene/add/trajectories smooth
-/vis/scene/endOfEventAction accumulate 10
+/vis/scene/endOfEventAction accumulate 5
 
 /vis/viewer/set/autoRefresh true
 /vis/verbose warnings

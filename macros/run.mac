@@ -1,17 +1,4 @@
-# ─────────────────────────────────────────────────────────────────────────────
-# run.mac  –  Batch-mode macro (no GUI).
-#
-# Usage:  ./bl4s_sim run.mac
-# ─────────────────────────────────────────────────────────────────────────────
-
-# Suppress visualisation output (not needed in batch).
 /vis/disable
-
-# Initialise the run manager.
 /run/initialize
-
-# Optional: change production cuts (default is 1 mm).
-# /run/setCut 0.1 mm
-
-# Simulate 100 events.
-/run/beamOn 100
+/run/setCut 0.1 mm
+/run/beamOn 1000000

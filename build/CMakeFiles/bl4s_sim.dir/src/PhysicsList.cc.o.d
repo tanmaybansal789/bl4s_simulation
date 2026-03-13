@@ -1,10 +1,13 @@
 CMakeFiles/bl4s_sim.dir/src/PhysicsList.cc.o: \
   /Users/puru/Desktop/school/bl4s/bl4s_simulation/src/PhysicsList.cc \
   /Users/puru/Desktop/school/bl4s/bl4s_simulation/include/PhysicsList.hh \
-  /Users/puru/geant4-install/include/Geant4/FTFP_BERT.hh \
-  /Users/puru/geant4-install/include/Geant4/CLHEP/Units/SystemOfUnits.h \
-  /Users/puru/geant4-install/include/Geant4/globals.hh \
-  /Users/puru/geant4-install/include/Geant4/G4ios.hh \
+  /Users/puru/geant4-install/include/Geant4/G4VModularPhysicsList.hh \
+  /Users/puru/geant4-install/include/Geant4/G4VPhysicsConstructor.hh \
+  /Users/puru/geant4-install/include/Geant4/G4ParticleTable.hh \
+  /Users/puru/geant4-install/include/Geant4/G4ParticleDefinition.hh \
+  /Users/puru/geant4-install/include/Geant4/G4PDefManager.hh \
+  /Users/puru/geant4-install/include/Geant4/G4AutoLock.hh \
+  /Users/puru/geant4-install/include/Geant4/G4Threading.hh \
   /Users/puru/geant4-install/include/Geant4/G4Types.hh \
   /Users/puru/geant4-install/include/Geant4/G4GlobalConfig.hh \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/complex \
@@ -846,6 +849,8 @@ CMakeFiles/bl4s_sim.dir/src/PhysicsList.cc.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__locale_dir/locale_base_api/bsd_locale_defaults.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/cstdarg \
   /Users/puru/geant4-install/include/Geant4/tls.hh \
+  /Users/puru/geant4-install/include/Geant4/globals.hh \
+  /Users/puru/geant4-install/include/Geant4/G4ios.hh \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/iostream \
   /Users/puru/geant4-install/include/Geant4/G4String.hh \
   /Users/puru/geant4-install/include/Geant4/G4String.icc \
@@ -908,13 +913,6 @@ CMakeFiles/bl4s_sim.dir/src/PhysicsList.cc.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/pointer_to_binary_function.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/pointer_to_unary_function.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/unary_negate.h \
-  /Users/puru/geant4-install/include/Geant4/G4VModularPhysicsList.hh \
-  /Users/puru/geant4-install/include/Geant4/G4VPhysicsConstructor.hh \
-  /Users/puru/geant4-install/include/Geant4/G4ParticleTable.hh \
-  /Users/puru/geant4-install/include/Geant4/G4ParticleDefinition.hh \
-  /Users/puru/geant4-install/include/Geant4/G4PDefManager.hh \
-  /Users/puru/geant4-install/include/Geant4/G4AutoLock.hh \
-  /Users/puru/geant4-install/include/Geant4/G4Threading.hh \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/chrono \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__chrono/calendar.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__chrono/convert_to_tm.h \
@@ -940,6 +938,7 @@ CMakeFiles/bl4s_sim.dir/src/PhysicsList.cc.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__thread/thread.h \
   /Users/puru/geant4-install/include/Geant4/pwdefs.hh \
   /Users/puru/geant4-install/include/Geant4/CLHEP/Units/PhysicalConstants.h \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Units/SystemOfUnits.h \
   /Users/puru/geant4-install/include/Geant4/G4ParticleDefinition.icc \
   /Users/puru/geant4-install/include/Geant4/G4ParticleTableIterator.hh \
   /Users/puru/geant4-install/include/Geant4/G4ParticleTable.icc \
@@ -983,4 +982,189 @@ CMakeFiles/bl4s_sim.dir/src/PhysicsList.cc.o: \
   /Users/puru/geant4-install/include/Geant4/G4GeomSplitter.hh \
   /Users/puru/geant4-install/include/Geant4/geomwdefs.hh \
   /Users/puru/geant4-install/include/Geant4/G4Region.icc \
-  /Users/puru/geant4-install/include/Geant4/G4StepLimiterPhysics.hh
+  /Users/puru/geant4-install/include/Geant4/G4EmStandardPhysics.hh \
+  /Users/puru/geant4-install/include/Geant4/G4DecayPhysics.hh \
+  /Users/puru/geant4-install/include/Geant4/G4Decay.hh \
+  /Users/puru/geant4-install/include/Geant4/G4VRestDiscreteProcess.hh \
+  /Users/puru/geant4-install/include/Geant4/G4VProcess.hh \
+  /Users/puru/geant4-install/include/Geant4/Randomize.hh \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Random/Randomize.h \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Random/DualRand.h \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Random/RandomEngine.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/fstream \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/filesystem \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__filesystem/copy_options.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__filesystem/directory_entry.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__filesystem/file_status.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__filesystem/file_type.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__filesystem/perms.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__filesystem/file_time_type.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__filesystem/filesystem_error.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__filesystem/path.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__filesystem/operations.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__filesystem/perm_options.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__filesystem/space_info.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__filesystem/directory_iterator.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__filesystem/directory_options.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__filesystem/path_iterator.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__filesystem/recursive_directory_iterator.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__filesystem/u8path.h \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Random/RandomEngine.icc \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Random/JamesRandom.h \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Random/MixMaxRng.h \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Random/MTwistEngine.h \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Random/RanecuEngine.h \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Random/RanluxEngine.h \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Random/Ranlux64Engine.h \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Random/RanluxppEngine.h \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Random/RanshiEngine.h \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Random/RandBinomial.h \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Random/Random.h \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Random/Random.icc \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Utility/memory.h \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Random/RandBinomial.icc \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Random/RandBreitWigner.h \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Random/RandFlat.h \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Utility/thread_local.h \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Random/RandFlat.icc \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Random/RandBreitWigner.icc \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Random/RandChiSquare.h \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Random/RandChiSquare.icc \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Random/RandExponential.h \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Random/RandExponential.icc \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Random/RandExpZiggurat.h \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Random/RandBit.h \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Random/RandBit.icc \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Random/RandGamma.h \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Random/RandGamma.icc \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Random/RandGauss.h \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Random/RandGauss.icc \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Random/RandGaussQ.h \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Random/RandGaussQ.icc \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Random/RandGaussZiggurat.h \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Random/RandGeneral.h \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Random/RandGeneral.icc \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Random/RandLandau.h \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Random/RandLandau.icc \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Random/RandPoissonQ.h \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Random/RandPoisson.h \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Random/RandPoisson.icc \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Random/RandPoissonQ.icc \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Random/RandStudentT.h \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Random/RandStudentT.icc \
+  /Users/puru/geant4-install/include/Geant4/G4PhysicsTable.hh \
+  /Users/puru/geant4-install/include/Geant4/G4PhysicsVector.hh \
+  /Users/puru/geant4-install/include/Geant4/G4Log.hh \
+  /Users/puru/geant4-install/include/Geant4/G4PhysicsVectorType.hh \
+  /Users/puru/geant4-install/include/Geant4/G4PhysicsVector.icc \
+  /Users/puru/geant4-install/include/Geant4/G4PhysicsTable.icc \
+  /Users/puru/geant4-install/include/Geant4/G4VParticleChange.hh \
+  /Users/puru/geant4-install/include/Geant4/G4TrackStatus.hh \
+  /Users/puru/geant4-install/include/Geant4/G4SteppingControl.hh \
+  /Users/puru/geant4-install/include/Geant4/G4Step.hh \
+  /Users/puru/geant4-install/include/Geant4/G4ThreeVector.hh \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Vector/ThreeVector.h \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Utility/defs.h \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Vector/ThreeVector.icc \
+  /Users/puru/geant4-install/include/Geant4/G4VPhysicalVolume.hh \
+  /Users/puru/geant4-install/include/Geant4/geomdefs.hh \
+  /Users/puru/geant4-install/include/Geant4/G4RotationMatrix.hh \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Vector/Rotation.h \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Vector/RotationInterfaces.h \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Vector/LorentzVector.h \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Vector/LorentzVector.icc \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Vector/AxisAngle.h \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Vector/AxisAngle.icc \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Vector/RotationInterfaces.icc \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Vector/RotationX.h \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Vector/RotationX.icc \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Vector/RotationY.h \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Vector/RotationY.icc \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Vector/RotationZ.h \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Vector/RotationZ.icc \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Vector/Rotation.icc \
+  /Users/puru/geant4-install/include/Geant4/G4VPhysicalVolume.icc \
+  /Users/puru/geant4-install/include/Geant4/G4StepPoint.hh \
+  /Users/puru/geant4-install/include/Geant4/G4Allocator.hh \
+  /Users/puru/geant4-install/include/Geant4/G4AllocatorPool.hh \
+  /Users/puru/geant4-install/include/Geant4/G4StepStatus.hh \
+  /Users/puru/geant4-install/include/Geant4/G4TouchableHandle.hh \
+  /Users/puru/geant4-install/include/Geant4/G4VTouchable.hh \
+  /Users/puru/geant4-install/include/Geant4/G4TouchableHistory.hh \
+  /Users/puru/geant4-install/include/Geant4/G4NavigationHistory.hh \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.5.sdk/usr/include/assert.h \
+  /Users/puru/geant4-install/include/Geant4/G4AffineTransform.hh \
+  /Users/puru/geant4-install/include/Geant4/G4Transform3D.hh \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Geometry/Transform3D.h \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Geometry/Transform3D.icc \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Geometry/Point3D.h \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Geometry/BasicVector3D.h \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Geometry/Vector3D.h \
+  /Users/puru/geant4-install/include/Geant4/CLHEP/Geometry/Normal3D.h \
+  /Users/puru/geant4-install/include/Geant4/G4AffineTransform.icc \
+  /Users/puru/geant4-install/include/Geant4/G4NavigationLevel.hh \
+  /Users/puru/geant4-install/include/Geant4/G4NavigationLevelRep.hh \
+  /Users/puru/geant4-install/include/Geant4/G4NavigationLevelRep.icc \
+  /Users/puru/geant4-install/include/Geant4/G4NavigationLevel.icc \
+  /Users/puru/geant4-install/include/Geant4/G4NavigationHistoryPool.hh \
+  /Users/puru/geant4-install/include/Geant4/G4NavigationHistory.icc \
+  /Users/puru/geant4-install/include/Geant4/G4LogicalVolume.hh \
+  /Users/puru/geant4-install/include/Geant4/G4LogicalVolume.icc \
+  /Users/puru/geant4-install/include/Geant4/G4TouchableHistory.icc \
+  /Users/puru/geant4-install/include/Geant4/G4ReferenceCountedHandle.hh \
+  /Users/puru/geant4-install/include/Geant4/G4Material.hh \
+  /Users/puru/geant4-install/include/Geant4/G4Element.hh \
+  /Users/puru/geant4-install/include/Geant4/G4ElementTable.hh \
+  /Users/puru/geant4-install/include/Geant4/G4ElementVector.hh \
+  /Users/puru/geant4-install/include/Geant4/G4IonisParamElm.hh \
+  /Users/puru/geant4-install/include/Geant4/G4Isotope.hh \
+  /Users/puru/geant4-install/include/Geant4/G4IsotopeVector.hh \
+  /Users/puru/geant4-install/include/Geant4/G4IonisParamMat.hh \
+  /Users/puru/geant4-install/include/Geant4/G4DensityEffectCalculator.hh \
+  /Users/puru/geant4-install/include/Geant4/G4MaterialPropertiesTable.hh \
+  /Users/puru/geant4-install/include/Geant4/G4MaterialPropertiesIndex.hh \
+  /Users/puru/geant4-install/include/Geant4/G4MaterialPropertyVector.hh \
+  /Users/puru/geant4-install/include/Geant4/G4PhysicsFreeVector.hh \
+  /Users/puru/geant4-install/include/Geant4/G4MaterialTable.hh \
+  /Users/puru/geant4-install/include/Geant4/G4SandiaTable.hh \
+  /Users/puru/geant4-install/include/Geant4/G4OrderedTable.hh \
+  /Users/puru/geant4-install/include/Geant4/G4DataVector.hh \
+  /Users/puru/geant4-install/include/Geant4/G4DataVector.icc \
+  /Users/puru/geant4-install/include/Geant4/G4StepPoint.icc \
+  /Users/puru/geant4-install/include/Geant4/G4TrackVector.hh \
+  /Users/puru/geant4-install/include/Geant4/G4Profiler.hh \
+  /Users/puru/geant4-install/include/Geant4/G4Profiler.icc \
+  /Users/puru/geant4-install/include/Geant4/PTL/Globals.hh \
+  /Users/puru/geant4-install/include/Geant4/PTL/Types.hh \
+  /Users/puru/geant4-install/include/Geant4/PTL/Utility.hh \
+  /Users/puru/geant4-install/include/Geant4/G4Step.icc \
+  /Users/puru/geant4-install/include/Geant4/G4Track.hh \
+  /Users/puru/geant4-install/include/Geant4/trkdefs.hh \
+  /Users/puru/geant4-install/include/Geant4/G4DynamicParticle.hh \
+  /Users/puru/geant4-install/include/Geant4/G4ElectronOccupancy.hh \
+  /Users/puru/geant4-install/include/Geant4/G4LorentzVector.hh \
+  /Users/puru/geant4-install/include/Geant4/G4ParticleMomentum.hh \
+  /Users/puru/geant4-install/include/Geant4/G4DynamicParticle.icc \
+  /Users/puru/geant4-install/include/Geant4/G4VUserTrackInformation.hh \
+  /Users/puru/geant4-install/include/Geant4/G4Track.icc \
+  /Users/puru/geant4-install/include/Geant4/G4VParticleChange.icc \
+  /Users/puru/geant4-install/include/Geant4/G4ForceCondition.hh \
+  /Users/puru/geant4-install/include/Geant4/G4GPILSelection.hh \
+  /Users/puru/geant4-install/include/Geant4/G4ParticleChange.hh \
+  /Users/puru/geant4-install/include/Geant4/G4ParticleChange.icc \
+  /Users/puru/geant4-install/include/Geant4/G4ProcessType.hh \
+  /Users/puru/geant4-install/include/Geant4/G4ParticleChangeForDecay.hh \
+  /Users/puru/geant4-install/include/Geant4/G4DecayProcessType.hh \
+  /Users/puru/geant4-install/include/Geant4/G4StepLimiterPhysics.hh \
+  /Users/puru/geant4-install/include/Geant4/G4DecayWithSpin.hh \
+  /Users/puru/geant4-install/include/Geant4/G4MuonDecayChannelWithSpin.hh \
+  /Users/puru/geant4-install/include/Geant4/G4MuonDecayChannel.hh \
+  /Users/puru/geant4-install/include/Geant4/G4VDecayChannel.hh \
+  /Users/puru/geant4-install/include/Geant4/G4MuonRadiativeDecayChannelWithSpin.hh \
+  /Users/puru/geant4-install/include/Geant4/G4MuonPlus.hh \
+  /Users/puru/geant4-install/include/Geant4/G4MuonMinus.hh \
+  /Users/puru/geant4-install/include/Geant4/G4DecayTable.hh \
+  /Users/puru/geant4-install/include/Geant4/G4ProcessManager.hh \
+  /Users/puru/geant4-install/include/Geant4/G4ProcessVector.hh \
+  /Users/puru/geant4-install/include/Geant4/G4ProcessVector.icc \
+  /Users/puru/geant4-install/include/Geant4/G4ProcessManager.icc

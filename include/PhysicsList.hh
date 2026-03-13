@@ -1,20 +1,22 @@
 #pragma once
 
-#include "FTFP_BERT.hh"
-#include "G4StepLimiterPhysics.hh"
+#include "G4VModularPhysicsList.hh"
 
 // ---------------------------------------------------------------------------
 // PhysicsList
 //
-// Extends FTFP_BERT (Fritiof string + Bertini cascade), the Geant4-recommended
-// list for high-energy hadron beams (SPS / BL4S range).
+// We use
+//   - G4EmStandardPhysics 
+//   - G4DecayPhysics - fixed up in ConstructParticle()/ConstructProcess() to use spin-aware versions for mu+/mu-
+//   - G4StepLimiterPhysics
 //
-// To switch lists, change the base class (e.g. QGSP_BERT, FTFP_BERT_HP).
-// G4StepLimiterPhysics is added so macro commands like /run/setCut work.
 // ---------------------------------------------------------------------------
-class PhysicsList : public FTFP_BERT
+class PhysicsList : public G4VModularPhysicsList
 {
 public:
     PhysicsList();
     ~PhysicsList() override = default;
+
+    void ConstructParticle() override;
+    void ConstructProcess() override;
 };

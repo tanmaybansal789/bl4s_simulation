@@ -8,8 +8,6 @@ class DetectorConstruction;
 // ActionInitialization
 //
 // Registers all user action classes with Geant4.
-// In multi-threaded mode Build() is called once per worker thread;
-// BuildForMaster() sets up only the master-thread actions (RunAction).
 // ---------------------------------------------------------------------------
 class ActionInitialization : public G4VUserActionInitialization
 {

@@ -2,6 +2,17 @@
 # run.mac  –  Batch-mode macro (no GUI).
 #
 # Usage:  ./bl4s_sim run.mac
+#
+# Output: muon_decay.root containing:
+#   - Ntuple "Positrons"  : per-hit data (eventID, side, decayTime [ns], energy [MeV])
+#   - Histogram "tL"      : decay time spectrum, left calorimeter  [ns]
+#   - Histogram "tR"      : decay time spectrum, right calorimeter [ns]
+#   - Histogram "eSpec"   : positron energy spectrum [MeV]
+#
+# Quick ROOT analysis (after the run):
+#   root muon_decay.root
+#   TH1F* h = (TH1F*)_file0->Get("tL"); h->Fit("expo");
+#   // expect tau ~ 2197 ns (muon lifetime)
 # ─────────────────────────────────────────────────────────────────────────────
 
 # Suppress visualisation output (not needed in batch).
@@ -10,8 +21,9 @@
 # Initialise the run manager.
 /run/initialize
 
-# Optional: change production cuts (default is 1 mm).
-# /run/setCut 0.1 mm
+# Optional: tighten production cuts for more precise shower simulation.
+/run/setCut 0.1 mm
 
-# Simulate 100 events.
-/run/beamOn 100
+# Simulate events.  1 000 000 gives ~540k calo hits → ~27k/bin at 50 ns,
+# σ_A ≈ 0.027 per bin, SNR ≈ 9:1 at peak — clearly visible precession oscillation.
+/run/beamOn 1000000

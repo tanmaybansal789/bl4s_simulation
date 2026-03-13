@@ -1,11 +1,6 @@
 #!/usr/bin/env zsh
-# ─────────────────────────────────────────────────────────────────────────────
-# run.sh  –  Build (if needed) and launch the BL4S simulation.
-#
-# Usage:
-#   ./run.sh          →  interactive Qt GUI
-#   ./run.sh batch    →  batch mode (run.mac, 100 events, no GUI)
-# ─────────────────────────────────────────────────────────────────────────────
+
+# yeah this isn't very portable, but it builds on mac
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 BUILD_DIR="$SCRIPT_DIR/build"

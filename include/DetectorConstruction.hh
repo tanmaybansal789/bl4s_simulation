@@ -1,18 +1,12 @@
 #pragma once
 
 #include "G4VUserDetectorConstruction.hh"
-#include "G4Material.hh"
 #include "G4LogicalVolume.hh"
 
 // ---------------------------------------------------------------------------
 // DetectorConstruction
 //
-// Builds the experimental geometry:
-//   World (Air)
-//     └─ Target  (Lead slab  – where primaries interact)
-//     └─ Tracker (Silicon layer – downstream of the target)
-//
-// Dimensions and materials can be changed here without touching any other file.
+// Builds the muon decay experiment geometry
 // ---------------------------------------------------------------------------
 class DetectorConstruction : public G4VUserDetectorConstruction
 {
@@ -20,29 +14,26 @@ public:
     DetectorConstruction()  = default;
     ~DetectorConstruction() = default;
 
-    // Called by Geant4 to build and return the physical world volume.
-    G4VPhysicalVolume* Construct() override;
+    G4VPhysicalVolume* Construct()          override;
+    void               ConstructSDandField() override;
 
-    // Accessors used by SteppingAction to identify sensitive volumes.
-    const G4LogicalVolume* GetTargetLogical()  const { return fTargetLogical;  }
-    const G4LogicalVolume* GetTrackerLogical() const { return fTrackerLogical; }
+    // Getters for logical volumes
+    G4LogicalVolume* GetS1Logical()      const { return fLogicS1;      }
+    G4LogicalVolume* GetS2Logical()      const { return fLogicS2;      }
+    G4LogicalVolume* GetS3Logical()      const { return fLogicS3;      }
+    G4LogicalVolume* GetStopperLogical() const { return fLogicStopper; }
+    G4LogicalVolume* GetCaloLLogical()   const { return fLogicCaloL;   }
+    G4LogicalVolume* GetCaloRLogical()   const { return fLogicCaloR;   }
+    G4LogicalVolume* GetCaloULogical()   const { return fLogicCaloU;   }
+    G4LogicalVolume* GetCaloDLogical()   const { return fLogicCaloD;   }
 
 private:
-    // ── Geometry parameters (edit here to change the setup) ────────────────
-    static constexpr double kWorldHalfX   = 100.0;  // cm
-    static constexpr double kWorldHalfY   = 100.0;  // cm
-    static constexpr double kWorldHalfZ   = 200.0;  // cm
-
-    static constexpr double kTargetHalfZ  =   5.0;  // cm  (lead slab thickness/2)
-    static constexpr double kTargetPosZ   = -50.0;  // cm  (centre position in world)
-
-    static constexpr double kTrackerHalfZ =   0.1;  // cm  (silicon layer thickness/2)
-    static constexpr double kTrackerPosZ  =  50.0;  // cm  (centre position in world)
-
-    // Logical volumes kept as members so SteppingAction can query them.
-    G4LogicalVolume* fTargetLogical  = nullptr;
-    G4LogicalVolume* fTrackerLogical = nullptr;
-
-    // ── Helpers ────────────────────────────────────────────────────────────
-    void DefineMaterials();
+    G4LogicalVolume* fLogicS1      = nullptr;
+    G4LogicalVolume* fLogicS2      = nullptr;
+    G4LogicalVolume* fLogicS3      = nullptr;
+    G4LogicalVolume* fLogicStopper = nullptr;
+    G4LogicalVolume* fLogicCaloL   = nullptr;
+    G4LogicalVolume* fLogicCaloR   = nullptr;
+    G4LogicalVolume* fLogicCaloU   = nullptr;
+    G4LogicalVolume* fLogicCaloD   = nullptr;
 };
