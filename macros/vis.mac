@@ -1,5 +1,6 @@
 /run/initialize
-/vis/open TSG 900x600-0+0
+
+/vis/open TSG_QT_ZB 900x600-0+0
 /vis/drawVolume
 
 /vis/viewer/set/viewpointThetaPhi 80 20
@@ -8,10 +9,33 @@
 
 /vis/scene/add/axes 0 0 0 30 cm
 
+# ── Trajectories: bold yellow mu+ only ─────────────────────────────────────
+# Use "smooth" not "rich" -- drawByParticleID requires G4SmoothTrajectory
 /vis/scene/add/trajectories smooth
-/vis/scene/endOfEventAction accumulate 5
+/vis/modeling/trajectories/create/drawByParticleID
+/vis/modeling/trajectories/drawByParticleID-0/set mu+ yellow
+/vis/modeling/trajectories/drawByParticleID-0/default/setDrawStepPts true
+/vis/modeling/trajectories/drawByParticleID-0/default/setStepPtsSize 5
+/vis/modeling/trajectories/drawByParticleID-0/default/setDrawAuxPts true
+/vis/modeling/trajectories/drawByParticleID-0/default/setAuxPtsSize 5
 
+# ── Filter: show mu+ only, hide e+/gamma/etc. ──────────────────────────────
+/vis/filtering/trajectories/create/particleFilter
+/vis/filtering/trajectories/particleFilter-0/add mu+
+
+# ── Labels ──────────────────────────────────────────────────────────────────
+/vis/scene/add/text  0  0 -8.6 cm 14 0 0 "S1"
+/vis/scene/add/text  0  0 -2.6 cm 14 0 0 "S2"
+/vis/scene/add/text  0  0  0.4 cm 14 0 0 "Stopper"
+/vis/scene/add/text  0  0  3.6 cm 14 0 0 "S3 (veto)"
+/vis/scene/add/text -8  0  7.5 cm 14 0 0 "CaloL"
+/vis/scene/add/text  8  0  7.5 cm 14 0 0 "CaloR"
+/vis/scene/add/text  0  8  7.5 cm 14 0 0 "CaloU"
+/vis/scene/add/text  0 -8  7.5 cm 14 0 0 "CaloD"
+
+/vis/scene/endOfEventAction accumulate 5
 /vis/viewer/set/autoRefresh true
 /vis/verbose warnings
+/vis/viewer/flush
 
 /run/beamOn 100
