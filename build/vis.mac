@@ -1,41 +1,41 @@
-# ─────────────────────────────────────────────────────────────────────────────
-# vis.mac  –  Visualisation setup loaded at startup in interactive mode.
-#
-# This macro is executed automatically when you run ./bl4s_sim with no args.
-# Edit it to change the default view, colours, or camera position.
-# ─────────────────────────────────────────────────────────────────────────────
-
-# ── 1. Initialise the run manager first (geometry must exist before drawing) ──
 /run/initialize
 
-# ── 2. Open the Qt window ────────────────────────────────────────────────────
-# TSG uses Qt's scene graph with GLES, routed through Apple Metal on M-series
-# Macs.  The legacy OGL (OpenGL immediate-mode) driver is deprecated on macOS
-# and crashes on Apple Silicon.
-/vis/open TSG 900x600-0+0
-
-# ── 3. Draw the geometry ──────────────────────────────────────────────────────
+/vis/open TSG_QT_ZB 900x600-0+0
 /vis/drawVolume
 
-# ── 4. Camera & scene setup ───────────────────────────────────────────────────
-# Compact geometry: world is 40×40×30 cm.  Centre on the stopper at origin
-# and zoom in to see the full calorimeter array and beam line.
 /vis/viewer/set/viewpointThetaPhi 80 20
 /vis/viewer/set/targetPoint 0 0 0 cm
 /vis/viewer/zoom 3.0
 
-# Show coordinate axes (length 30 cm, at the stopper/origin).
 /vis/scene/add/axes 0 0 0 30 cm
 
-# ── 5. Trajectory display ─────────────────────────────────────────────────────
-# Accumulate up to 5 events worth of tracks at once.
-# mu+ tracks will appear entering from the left; e+ tracks spiral outward
-# from the stopper when the B field curves them.
+# ── Trajectories: bold yellow mu+ only ─────────────────────────────────────
+# Use "smooth" not "rich" -- drawByParticleID requires G4SmoothTrajectory
 /vis/scene/add/trajectories smooth
-/vis/scene/endOfEventAction accumulate 5
+/vis/modeling/trajectories/create/drawByParticleID
+/vis/modeling/trajectories/drawByParticleID-0/set mu+ yellow
+/vis/modeling/trajectories/drawByParticleID-0/default/setDrawStepPts true
+/vis/modeling/trajectories/drawByParticleID-0/default/setStepPtsSize 5
+/vis/modeling/trajectories/drawByParticleID-0/default/setDrawAuxPts true
+/vis/modeling/trajectories/drawByParticleID-0/default/setAuxPtsSize 5
 
+# ── Filter: show mu+ only, hide e+/gamma/etc. ──────────────────────────────
+/vis/filtering/trajectories/create/particleFilter
+/vis/filtering/trajectories/particleFilter-0/add mu+
+
+# ── Labels ──────────────────────────────────────────────────────────────────
+/vis/scene/add/text  0  0 -8.6 cm 14 0 0 "S1"
+/vis/scene/add/text  0  0 -2.6 cm 14 0 0 "S2"
+/vis/scene/add/text  0  0  0.4 cm 14 0 0 "Stopper"
+/vis/scene/add/text  0  0  3.6 cm 14 0 0 "S3 (veto)"
+/vis/scene/add/text -8  0  7.5 cm 14 0 0 "CaloL"
+/vis/scene/add/text  8  0  7.5 cm 14 0 0 "CaloR"
+/vis/scene/add/text  0  8  7.5 cm 14 0 0 "CaloU"
+/vis/scene/add/text  0 -8  7.5 cm 14 0 0 "CaloD"
+
+/vis/scene/endOfEventAction accumulate 5
 /vis/viewer/set/autoRefresh true
 /vis/verbose warnings
+/vis/viewer/flush
 
-# ── 6. Fire a few seed events so tracks are visible on startup ────────────────
-/run/beamOn 5
+/run/beamOn 100
